@@ -57,7 +57,7 @@
                 else telError.textContent = "Phone number is invalid";
         });
         pwd.addEventListener('input', function() {
-            let pwdRegex = /^.{8,}$/;
+            let pwdRegex = /^(?=.*[@#$%^&+=])(?=.*[0-9])(?=.*[A-Z]).{8,}$/;
             if(pwdRegex.test(pwd.value))
                 pwdError.textContent = "";
                 else pwdError.textContent = "Password is invalid";
