@@ -25,6 +25,11 @@
             <error-output class = "tel-error" for = "tel"></error-output>                
         </div>
         <div>
+            <label for = "pwd">Enter password:</label>
+            <input type = "password" id = "pwd" name = "pwd" required>
+            <error-output class = "pwd-error" for = "pwd"></error-output>        
+        </div>
+        <div>
             <button>Submit</button>
         </div>
     </form>
@@ -32,6 +37,7 @@
         const textError = document.querySelector('.text-error');
         const emailError = document.querySelector('.email-error');
         const telError = document.querySelector('.tel-error');
+        const pwdError = document.querySelector('.pwd-error');
         text.addEventListener('input', function() {
             let nameRegex = /^[A-Z][a-z]{2,}$/;
             if(nameRegex.test(text.value))
@@ -49,6 +55,12 @@
             if(telRegex.test(tel.value))
                 telError.textContent = "";
                 else telError.textContent = "Phone number is invalid";
+        });
+        pwd.addEventListener('input', function() {
+            let pwdRegex = /^.{8,}$/;
+            if(pwdRegex.test(pwd.value))
+                pwdError.textContent = "";
+                else pwdError.textContent = "Password is invalid";
         });
     </script>
 </body>
